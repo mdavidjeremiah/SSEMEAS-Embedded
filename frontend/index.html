@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSMEAS · Sewage tank monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Sign-in, create account and password reset -->
+  <section id="login" class="login" hidden>
+    <form id="login-form" class="panel">
+      <h1>SSMEAS</h1>
+      <p class="muted">Sign in to watch your sewage tanks.</p>
+      <label>Email<input id="email" type="email" autocomplete="username" required></label>
+      <label>Password<input id="password" type="password" autocomplete="current-password" minlength="6" required></label>
+      <p id="login-error" class="error" role="alert"></p>
+      <div class="row start">
+        <button>Sign in</button>
+        <button type="button" id="register" class="ghost">Create account</button>
+      </div>
+      <p class="small"><a href="#" id="forgot">Forgot password?</a></p>
+      <p class="small muted" id="demo-hint"></p>
+    </form>
+    <form id="reset-form" class="panel" hidden>
+      <h1>New password</h1>
+      <label>Choose a new password<input id="new-password" type="password" autocomplete="new-password" minlength="6" required></label>
+      <p id="reset-error" class="error" role="alert"></p>
+      <button>Change password</button>
+    </form>
+  </section>
+
+  <!-- The dashboard -->
+  <div id="app" hidden>
+    <header>
+      <span class="brand">SSMEAS</span>
+      <nav aria-label="Main">
+        <a href="#/">Tanks</a>
+        <a href="#/alerts">Alerts</a>
+        <a href="#/settings">Settings</a>
+        <a href="#/admin" id="admin-link" hidden>Admin</a>
+      </nav>
+      <button id="sign-out" class="ghost light">Sign out</button>
+    </header>
+    <main id="view"></main>
+  </div>
+
+  <div id="toasts" aria-live="polite"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
